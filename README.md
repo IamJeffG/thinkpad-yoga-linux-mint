@@ -7,7 +7,7 @@ Table of contents
 2.  Download files (without working wifi)
 3.  Fix wifi by installing new kernel and drivers
 4.  Fix graphics with new kernel and drivers
-5.  Still not working...
+5.  Things that still don't work...
 
 Dual Boot with Windows
 ======================
@@ -36,9 +36,9 @@ Easiest is an **external USB Wifi Adapter**. However supposedly few work on Linu
 Otherwise wifi works in Windows so you can boot to Windows, download the files, then transfer to the Linux side. Options include:
 
 - **a big USB flash drive**
-- **[read directly from Windows mount](file:///home/jeff/Desktop/Linux%20Mint%20on%20ThinkPad%20Yoga/CUSTOMIZATIONS.md)**
+- **[read directly from Windows mount](CUSTOMIZATIONS.md#mount-windows-drive-read-only)**
 
-Fix wifi for Intel Wireless 8260
+Fix Wifi for Intel Wireless 8260
 ================================
 
 Confirm you have the `Intel Wireless 8260` card (`$ inxi -Fxz`) and that it's not currently working
@@ -51,10 +51,10 @@ However, it's not so simple. Just because `iwlwifi` can support it in Linux >= 4
 
 [This mapping wasn't added until December 2016](https://git.kernel.org/cgit/linux/kernel/git/iwlwifi/iwlwifi-fixes.git/commit/?id=4ab75944c4b324c1f5f01dbd4c4d122d2b9da187) – meaning it only got added to kernels that were being supported at that time: **4.1.17** and higher microversions, as well as **4.4**, are maintained. But 4.2 and 4.3 were EOL.
 
-Here's how to proceed:
+### Here's how to proceed:
 
-1.  I've got wifi working successfully on 4.1.17, but later on we'll see graphics
-    problems on 4.1, so go ahead and install 4.4 now. [Follow Laurent85's instructions for 4.4 here](https://forums.linuxmint.com/viewtopic.php?t=216235#p1132177), including the newer `linux-firmware`.
+1.  Wifi can work on 4.1.17, but later on we'll see graphics
+    problems on 4.1, so go ahead and install __Kernel 4.4__ now. [Follow Laurent85's instructions for 4.4 here](https://forums.linuxmint.com/viewtopic.php?t=216235#p1132177), including the newer `linux-firmware`.
 
 2.  Also install the right version of [those intel drivers](https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi):
 
@@ -76,7 +76,9 @@ With **Kernel 4.4** both acceleration and standby both work great after installi
 
     sudo apt-get install nvidia-352
 
-Still not working...
-====================
+Things that still don't work...
+===============================
+
+To be fair, I haven't tried to fix this yet.
 
 * Auto-rotate screen when I flip the computer.
