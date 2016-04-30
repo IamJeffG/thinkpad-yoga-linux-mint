@@ -31,6 +31,37 @@ Here's how to automatically mount on every boot.
 
 4. Reboot to prove it worked. If not, you'll see an error during startup.
 
+Enable Euro & Compose Keys
+--------------------------
+
+I'm on a U.S. English keyboard...
+
+Go to: Keyboard > Layout > Options
+
+* Set __Key to choose 3rd level → Right Alt__
+* Set __Adding currency signs to certain keys → Euro on E__
+
+This allows you to hold `RtAlt + E` to get `€`.
+
+Note that choosing a 3rd level does not open up the third-level and fourth_-
+level (3rd level key + `Shift`) sets of typographic symbols [as described
+here](https://help.ubuntu.com/community/ComposeKey#Third_and_fourth_level_choosers),
+unless you also __Enable extra typographic characters__ under
+"Miscellaneous compatibility options".  I choose to leave this disabled.
+
+Instead, I find it more intuitive to build up common typographic characters
+using the Compose Key:
+
+* Set __Position of the Compose key → 3rd level of Right Ctrl__
+
+This allows things like
+
+    RtAlt+RtCtrl  /  c   →  ¢
+    RtAlt+RtCtrl  o  c   →  ©
+    RtAlt+RtCtrl  1  4   →  ¼
+    RtAlt+RtCtrl  `  e   →  è
+    RtAlt+RtCtrl  -  >   →  →
+
 
 Reset screenshot directory
 --------------------------
