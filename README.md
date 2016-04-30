@@ -79,6 +79,37 @@ With **Kernel 4.4** both acceleration and standby both work great after installi
 Things that still don't work...
 ===============================
 
-To be fair, I haven't tried to fix this yet.
+Auto-rotate screen when I flip the computer
+-------------------------------------------
 
-* Auto-rotate screen when I flip the computer.
+Not working. There are two sides to this...
+
+### Orientation detection
+
+There are many almost-working scripts (e.g. [^1], [^2], [^3]) out there and they all rely on
+`/sys/bus/iio`. Strangely this location doesn't exist on my computer.
+
+* [I've also asked about this on the Linux Mint Forums.](https://forums.linuxmint.com/viewtopic.php?f=49&t=221038)
+* They
+also all mention systemd as a requirement, which [Linux Mint 17.3 doesn't
+support](http://www.pcworld.com/article/2921385/its-optional-for-now-but-linux-mint-expects-to-switch-to-systemd-next-year.html).
+
+[^1]: https://github.com/johanneswilm/thinkpad-yoga-14-s3-scripts/blob/master/rotate/thinkpad-rotate.py
+[^2]: https://github.com/pfps/yoga-laptop/blob/79d7db4bef4ebcae12d8ec1d69dc48696796375d/docs/Orientation%20and%20rotation
+[^3]: https://github.com/ragtag/spin
+
+### Rotation (manual)
+
+Really the oriendation detection is moot because I cannot even rotate the screen manually.
+
+    $ xrandr --output eDP1 --rotate left
+    xrandr: output eDP1 cannot use rotation "left" reflection "none"
+
+Alternately:
+
+    xrandr -o right
+
+reduces screen size significantly and doesn't rotate anyway. (To get out of this, Win+Space, type "Display" and re-Apply the Desktop.)
+
+Perhaps the versions of xrandr and of the NVIDIA driver (nvidia-352)
+don't support this together? https://bugs.launchpad.net/nvidia-drivers-ubuntu/+bug/518132
