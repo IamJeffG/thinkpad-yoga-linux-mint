@@ -31,36 +31,42 @@ Here's how to automatically mount on every boot.
 
 4. Reboot to prove it worked. If not, you'll see an error during startup.
 
-Enable Euro & Compose Keys
+Enable Compose Keys
 --------------------------
 
-I'm on a U.S. English keyboard...
+Linux Mint makes it easy to turn on Compose keys in keyboard options, but this
+computer's physical keyboard has very few "superfluous" keys that I don't regularly
+use.  My hacky solution is to define `Shift+Win` as the Compose key, without changing
+the `Win` key's primary function of opening the Cinnamon menu.
 
-Go to: Keyboard > Layout > Options
+I'm on a U.S. English keyboard.  I do not enable a 3rd level.
 
-* Set __Key to choose 3rd level → Right Alt__
-* Set __Adding currency signs to certain keys → Euro on E__
-
-This allows you to hold `RtAlt + E` to get `€`.
-
-Note that choosing a 3rd level does not open up the third-level and fourth_-
-level (3rd level key + `Shift`) sets of typographic symbols [as described
-here](https://help.ubuntu.com/community/ComposeKey#Third_and_fourth_level_choosers),
-unless you also __Enable extra typographic characters__ under
-"Miscellaneous compatibility options".  I choose to leave this disabled.
-
-Instead, I find it more intuitive to build up common typographic characters
-using the Compose Key:
-
-* Set __Position of the Compose key → 3rd level of Right Ctrl__
+[The solution is described here.](https://forums.linuxmint.com/viewtopic.php?f=208&t=221606&p=1169670#p1169670)
 
 This allows things like
 
-    RtAlt+RtCtrl  /  c   →  ¢
-    RtAlt+RtCtrl  o  c   →  ©
-    RtAlt+RtCtrl  1  4   →  ¼
-    RtAlt+RtCtrl  `  e   →  è
-    RtAlt+RtCtrl  -  >   →  →
+    Shift+LeftWin  e  =   →  €
+    Shift+LeftWin  /  c   →  ¢
+    Shift+LeftWin  o  c   →  ©
+    Shift+LeftWin  1  4   →  ¼
+    Shift+LeftWin  `  e   →  è
+    Shift+LeftWin  -  >   →  →
+
+
+Keyboard shortcuts for missing audio keys
+-----------------------------------------
+
+The Thinkpad Yoga has no built-in keys to adjust audio playback.
+Emulate this using `Win+Left` or `Win+Right` for previous/next track,
+and `Win+Down` to toggle play.
+(I had initially tried `Alt+Left` or `Alt+Right`, but this interferes
+with web browser shortcuts for prev/next page.)
+
+This is found in: Keyboard → Shortcuts → Sound and Media
+
+When setting "Previous track", "Next track", and "Play", Cinnamon will warn
+you that it's changing the shortcuts from "Push tile left/right/down".
+I never used this anyway.
 
 
 Reset screenshot directory
