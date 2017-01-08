@@ -93,3 +93,18 @@ Display "save your tabs?" warning when quitting Firefox
 ([source](http://ccm.net/faq/13072-display-the-save-and-quit-message-when-closing-firefox))
 
 * in `about:config`, set `browser.showquitwarning` to True.
+
+MTP for Samsung A3 phone
+------------------------
+
+This is not a problem with the Thinkpad, but a workaround here makes up
+for Samsung's shortcoming.  My Galaxy A3 phone has poor support for USB Mass
+Storage, so I have to use MTP instead.  There's a Banshee plugin that
+tries to hijack your new MTP connections, so it's best left disabled:
+
+* in Banshee's Preferences → Extensions, disable "Mass Storage Media Player"
+  and "MTP Media Player".
+
+Also, if your phone has too many files, MTP will crash nemo. Use [this
+transfer client](https://github.com/whoozle/android-file-transfer-linux)
+instead (and disable Nemo's automount).
