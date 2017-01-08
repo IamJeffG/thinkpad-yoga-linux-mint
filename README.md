@@ -76,6 +76,12 @@ With **Kernel 4.4** both acceleration and standby both work great after installi
 
     sudo apt-get install nvidia-352
 
+If in the future, some package manager update happens to bork graphics (e.g.
+[the November 2016 forced upgrade to
+`nvidia-367=367.57`](https://forums.linuxmint.com/viewtopic.php?f=49&t=233050
+)): You can always add `nomodeset` to the `linux` command through GRUB to get
+some half-working graphical desktop.
+
 Things that still don't work...
 ===============================
 
@@ -113,3 +119,20 @@ reduces screen size significantly and doesn't rotate anyway. (To get out of this
 
 Perhaps the versions of xrandr and of the NVIDIA driver (nvidia-352)
 don't support this together? https://bugs.launchpad.net/nvidia-drivers-ubuntu/+bug/518132
+
+
+Occasionally standby stops working
+----------------------------------
+
+Usually standby works (either through menu or by closing the lid).
+But every 10th time or so it stops and standby won't work again til laptop
+is rebooted.
+
+Specifically:
+
+* closing the lid does nothing.  When closing the lid the following is emitted to dmesg:
+
+    i915 0000:00:02.0: BAR 6: [??? 0x00000000 flags 0x2] has bogus alignment
+
+* clicking the "Quit" menu item ends up lagging about 1 minute til the Shutdown
+  popup appears, and this popup is missing the (usually present) "Standby" option.
