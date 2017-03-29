@@ -108,3 +108,13 @@ tries to hijack your new MTP connections, so it's best left disabled:
 Also, if your phone has too many files, MTP will crash nemo. Use [this
 transfer client](https://github.com/whoozle/android-file-transfer-linux)
 instead (and disable Nemo's automount).
+
+
+Touchscreen Scroll in Firefox
+-----------------------------
+
+This enables **two-finger scrolling** in Firefox. Use one finger and it will still
+select text, as always.
+
+* In Firefox's `about:config`, [set `dom.w3c_touch_events.enabled=1`](https://bbs.archlinux.org/viewtopic.php?id=216569) (default was 2)
+* Start firefox with `env MOZ_USE_XINPUT2=1`, [as instructed here.](http://askubuntu.com/a/886914/547689)
